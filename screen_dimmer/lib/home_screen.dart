@@ -525,22 +525,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 18),
-            Text('About Screen Dimmer', style: title),
-            const SizedBox(height: 8),
-            Text(
-              'Screen Dimmer provides quick controls for display comfort using '
-              'the Redshift tool on Linux. Adjust brightness, color temperature, '
-              'and gamma with debounced updates.',
-              style: body,
-            ),
             const SizedBox(height: 16),
             Text('Redshift', style: title),
             const SizedBox(height: 8),
             Text(
               '• Requires Linux with Redshift installed.\n'
               '• “Reset” clears adjustments and returns to neutral (6500K, 100% brightness, gamma 1.0).\n'
-              '• Changes are only applied after a short pause to keep things smooth.',
+              '• Changes are only applied after a short pause to keep things smooth (avoid overly calling terminal commands).',
               style: body,
             ),
             const SizedBox(height: 16),
@@ -550,12 +541,21 @@ class _HomeScreenState extends State<HomeScreen> {
               underlineColor: Colors.black,
               onTap: () => launchUrlFunction(url: 'https://github.com/jonls/redshift'),
             ),
+
+            const SizedBox(height: 20),
+
+            Text('About Screen Dimmer', style: title),
+            const SizedBox(height: 8),
+            Text(
+              "Screen Dimmer provides quick controls for display comfort using the Redshift tool on Linux. Adjust brightness, color temperature, and gamma with easy sliders.\n\nI take no credit for the Redshift tool itself; I just wanted a simple GUI for it.\n\nI've only tested this on Linux Mint 22 so milage may vary elsewhere.",
+              style: body,
+            ),
             const SizedBox(height: 16),
 
             Text('How it works', style: title),
             const SizedBox(height: 8),
             Text(
-              '• Brightness: scales the display luminance (10%–100%).\n'
+              '• Brightness: scales the display luminance (10%–100%). Avoided 0% as I found I accidently could turn the screen black and be unable to see anything to turn it back up!\n'
               '• Temperature: sets color temperature in Kelvin (1000–10000K).\n'
               '• Gamma: applies a uniform gamma curve (1.0–3.0).',
               style: body,
