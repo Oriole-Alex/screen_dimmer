@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
 // Screens.
 import 'home_screen.dart';
 // Styles
@@ -29,6 +30,8 @@ Future<void> main() async {
       await windowManager.focus();
     });
   }
+
+  GoogleFonts.config.allowRuntimeFetching = false;
 
   runApp(const MyApp());
 }
