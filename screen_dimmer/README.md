@@ -1,3 +1,3 @@
-# screen_dimmer
+# screendimmer
 
 A new Flutter project.

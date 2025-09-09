@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Screen Dimmer
+Comment=Dim your screen
+Exec=screendimmer
+Icon=com.oriole.screendimmer
+Terminal=false
+Categories=Utility;
+StartupWMClass=com.oriole.screendimmer
+X-Flatpak=com.oriole.screendimmer

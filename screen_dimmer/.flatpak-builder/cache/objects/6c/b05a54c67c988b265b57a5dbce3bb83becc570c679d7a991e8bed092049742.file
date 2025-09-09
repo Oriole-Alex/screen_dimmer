@@ -1,0 +1,5 @@
+[Runtime]
+name=com.oriole.screendimmer.Debug
+
+[ExtensionOf]
+ref=app/com.oriole.screendimmer/x86_64/master

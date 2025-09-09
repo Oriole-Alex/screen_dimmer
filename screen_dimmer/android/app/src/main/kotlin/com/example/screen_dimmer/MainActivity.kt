@@ -1,4 +1,4 @@
-package com.example.screen_dimmer
+package com.oriole.screendimmer
 
 import io.flutter.embedding.android.FlutterActivity
 

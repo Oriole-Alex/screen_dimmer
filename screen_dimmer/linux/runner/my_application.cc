@@ -55,8 +55,25 @@ static void my_application_activate(GApplication* application) {
 
   gtk_window_set_default_size(window, 1280, 720);
 
+  // Create the Flutter project first
   g_autoptr(FlDartProject) project = fl_dart_project_new();
   fl_dart_project_set_dart_entrypoint_arguments(project, self->dart_entrypoint_arguments);
+
+  // Build the absolute path to the icon inside the Flutter bundle (…/data/flutter_assets/assets/app_icon.png)
+  const gchar* assets_dir = fl_dart_project_get_assets_path(project);
+  g_autofree gchar* icon_path = g_build_filename(assets_dir, "assets", "app_icon.png", NULL);
+
+  // Optional: sanity check the file exists
+  if (!g_file_test(icon_path, G_FILE_TEST_EXISTS)) {
+    g_warning("Icon file not found at: %s", icon_path);
+  }
+
+  GError* icon_err = NULL;
+  gtk_window_set_icon_from_file(window, icon_path, &icon_err);
+  if (icon_err) {
+    g_warning("Failed to set window icon from '%s': %s", icon_path, icon_err->message);
+    g_clear_error(&icon_err);
+  }
 
   FlView* view = fl_view_new(project);
   GdkRGBA background_color;

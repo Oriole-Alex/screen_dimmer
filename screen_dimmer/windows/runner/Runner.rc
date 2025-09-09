@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "screen_dimmer" "\0"
+            VALUE "FileDescription", "screendimmer" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "screen_dimmer" "\0"
+            VALUE "InternalName", "screendimmer" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "screen_dimmer.exe" "\0"
-            VALUE "ProductName", "screen_dimmer" "\0"
+            VALUE "OriginalFilename", "screendimmer.exe" "\0"
+            VALUE "ProductName", "screendimmer" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
